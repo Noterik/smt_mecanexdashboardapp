@@ -1,0 +1,1 @@
+var Tabs = function(options) { }

@@ -1,0 +1,86 @@
+#synctime {
+	display: none;
+}
+
+body {
+	margin: 0;
+	font-family: "Raleway",Arial,Helvetica,"Nimbus Sans L",sans-serif;
+}
+
+#header {
+	height: 100px;
+	margin: 0px, auto;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+#header_wrapper {
+	display: inline-block;
+	font-size: 25pt;
+	height: 100px;
+	line-height: 100px;
+}
+
+#header_logo {
+	background: url(/eddie/apps/mecanexdashboard/img/mecanex_logo.png) no-repeat;
+	width: 100px;
+	height: 100px;
+	float: left;
+	padding: 10px;
+}
+
+#header_user {
+	text-align: right;
+	margin: 15px;
+	display: none;
+	float: right;
+}
+
+#login {
+	text-align: center;
+}
+
+#login_form {
+	border: 1px solid black;
+    display: inline-block;
+    text-align: left; 
+}
+
+#login_error {
+	color: red;
+}
+
+#logout {
+	cursor: pointer;
+	cursor: hand;
+}
+
+#tabs {
+	width: 100%;
+	height: 30px;
+	background-color: #EEE;
+	padding-left: 50px;
+}
+
+#tabs > div {
+	float: left;
+	padding: 5px;
+}
+
+#collections {
+	margin-left: 50px;
+	margin-right: 50px; 
+	text-align: center;
+}
+
+#available_collections {
+	width: 50%;
+	float: left;
+	text-align: left;
+}
+
+#user_collections {
+	width: 50%;
+	float: left;
+	text-align: left;
+}
