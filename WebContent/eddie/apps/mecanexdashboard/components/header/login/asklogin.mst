@@ -1,0 +1,2 @@
+Enter name <input id="loginname" size="12" maxlength="12"><br/>
+<div id="feedback"></div>

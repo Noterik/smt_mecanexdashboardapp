@@ -1,0 +1,56 @@
+<app>
+	<view id="#screen">
+		<template>screen.mst</template>
+		<controller id="ScreenController">
+		</controller>
+	</view>
+	
+	<view id="#workflowbar">
+		<template>workflowbar/workflowbar.mst</template>
+		<controller id="WorkflowController">
+		</controller>
+	</view>
+	
+	<view id="#workarea">
+		<controller id="WorkAreaController" />
+	</view>	
+	
+	<view id="#home">
+		<template>workarea/home/index.mst</template>
+		<controller id="HomeController" />
+	</view>
+	
+	<view id="#ingest">
+		<template>workarea/ingest/index.mst</template>
+		<controller id="IngestController" />
+	</view>
+	
+	<view id="#collectiondef">
+		<template>workarea/collectiondef/index.mst</template>
+		<controller id="CollectionDefController" />
+	</view>	
+	
+	<view id="#annotations">
+		<template>workarea/annotations/index.mst</template>
+		<controller id="AnnotationsController" />
+	</view>	
+	
+	<view id="#enrichments">
+		<template>workarea/enrichments/index.mst</template>
+		<controller id="EnrichmentsController" />
+	</view>	
+	
+	<view id="#editorial">
+		<template>workarea/editorial/index.mst</template>
+		<controller id="EditorialController" />
+	</view>	
+	
+	<view id="#workflowlist">
+		<controller id="FsListController">
+			<template>workflowbar/workflowlist.mst</template>
+			<nodepath>/domain/mecanex/config/default/flowlist/</nodepath>
+			<fields>title</fields>
+			<mouseovercss>menumouseover</mouseovercss>
+		</controller>
+	</view>
+</app>

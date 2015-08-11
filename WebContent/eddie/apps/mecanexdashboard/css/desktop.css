@@ -1,0 +1,154 @@
+body {
+	background-color:#555555;
+	-webkit-background-size: 1024px 768px;
+	-moz-background-size: 1024px 768px;
+	-o-background-size: 1024px 768px;
+	background-size: 1024px 768px;
+}
+
+
+table,
+td,
+th {
+  border: solid 1px silver;
+  color:#eeeeee;
+  padding:5px;
+  font-size:12pt;
+  text-align: center;
+  }
+table {
+  border-collapse:collapse;
+  width: 100%;
+  }
+table tr {
+  background-color:#777777;
+  }
+
+table td, table th{
+    border:1px solid #777777;
+    }
+    
+ th {
+  background-color:#333333;
+  color:#fff;
+  }
+  
+  
+ .passmousevents {
+ 	pointer-events:none;  
+ }
+ 
+ .menumouseover {
+	background-color: #5555aa;
+ }
+  
+  
+ #hidebutton {
+	color: #000000;
+	background-color: #ffffff;
+	text-align: center;
+	font-style: bold;
+	position:absolute;
+	left : 40px;
+	bottom:20px;
+	width: 90px;
+	height: 20px;
+	padding: 3px;
+}
+
+ #showbutton {
+	color: #000000;
+	background-color: #ffffff;
+	text-align: center;
+	font-style: bold;
+	position:absolute;
+	left : 140px;
+	bottom:20px;
+	width: 90px;
+	height: 20px;
+	padding: 3px;
+}
+
+#dutchbutton {
+	color: #000000;
+	background-color: #ffffff;
+	text-align: center;
+	font-style: bold;
+	position:absolute;
+	right : 40px;
+	top:20px;
+	width: 90px;
+	height: 20px;
+	padding: 3px;
+}
+
+#germanbutton {
+	color: #000000;
+	background-color: #ffffff;
+	text-align: center;
+	font-style: bold;
+	position:absolute;
+	right : 140px;
+	top:20px;
+	width: 90px;
+	height: 20px;
+	padding: 3px;
+}
+
+#englishbutton {
+	color: #000000;
+	background-color: #ffffff;
+	text-align: center;
+	font-style: bold;
+	position:absolute;
+	right : 240px;
+	top:20px;
+	width: 90px;
+	height: 20px;
+	padding: 3px;
+}
+
+#login {
+	display: none;
+	color: #000000;
+	background-color: #ffffff;
+	text-align: center;
+	font-style: bold;
+	position:absolute;
+	left : 50px;
+	top:20px;
+	width: 250px;
+	height: 50px;
+	padding: 3px;
+}
+
+
+#header {
+	color: #ffffff;
+	background-color: #666666;
+	position:absolute;
+	top:10px;
+	left:20px;
+	right:20px;
+	height: 50px;
+}
+
+#workflowbar {
+	color: #000000;
+	background-color: #888888;
+	position:absolute;
+	top:81px;
+	left:50px;
+	right:50px;
+	height: 30px;
+}
+
+#workarea {
+	color: #ffffff;
+	background-color: #000000;
+	position:absolute;
+	top:111px;
+	bottom:50px;
+	left:50px;
+	right:50px;
+}

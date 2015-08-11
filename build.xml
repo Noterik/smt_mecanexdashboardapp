@@ -151,7 +151,7 @@
 		<!--<scp file="${package.location.war}" todir="root@a1.noterik.com:/springfield/lou/uploaddir" knownhosts="/Users/pieter/.ssh/known_hosts" trust="true" passphrase="" keyfile="/Users/pieter/.ssh/ntk_rsa" lib="${lib.dir}/jsch.jar" />-->
 		<exec executable="/bin/bash">
 			<!-- remove this line or use your own auto deploy method to get it into the lou upload dir -->
-			<arg value="/springfield/tomcat/bin/noterikcopy_mecanex.sh"/>
+			<arg value="/springfield/tomcat/bin/installapp_mecanex.sh"/>
 		</exec>
 	</target>
 	
