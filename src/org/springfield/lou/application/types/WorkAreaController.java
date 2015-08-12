@@ -28,6 +28,7 @@ public class WorkAreaController extends Html5Controller {
 			 String name = (String)data.get("name");
 			 screen.get(selector).html("<div id=\""+name+"\"></div>");
 			 // ugly for now ?
+			 screen.log("Area Controller switcharea to : "+name);
 			 if (name.equals("collectiondef")) screen.get("#collectiondef").attach(new CollectiondefController()); 
 			 if (name.equals("home")) screen.get("#home").attach(new HomeController()); 
 			 if (name.equals("ingest")) screen.get("#ingest").attach(new IngestController()); 
