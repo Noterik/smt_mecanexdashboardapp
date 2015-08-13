@@ -1,6 +1,7 @@
 package org.springfield.lou.application.types.workflow.collectiondef;
 
 import org.json.simple.JSONObject;
+import org.springfield.lou.application.types.workflow.element.form.DropDownController;
 import org.springfield.lou.controllers.Html5Controller;
 
 public class CollectiondefController extends Html5Controller {
@@ -12,6 +13,7 @@ public class CollectiondefController extends Html5Controller {
 	public void attach(String sel) {
 		selector = sel;
 		loadHtml();
+		screen.get("#license").attach(new DropDownController());
 	}
 	
 	private void loadHtml() {
