@@ -44,10 +44,6 @@ public class DropDownController extends Html5Controller {
 		//constructor
 	}
 	
-	public DropDownController(String n) {
-		nodepath = n;
-	}
-	
 	public void attach(String s) {
 		selector = s;
 		if (screen!=null) {
@@ -55,17 +51,36 @@ public class DropDownController extends Html5Controller {
 			if (node!=null) {
 				nodepath = node.getProperty("nodepath");
 				fields = node.getProperty("fields");
-				//template = node.getProperty("template");
-				//System.out.println("WHOOOOLOG="+template);
+				template = node.getProperty("template");
+				
 				model.observeTree(this,nodepath);
-				//screen.get(selector).template(template);
-				loadHtml();
-				//screen.get(selector).html("WHOOOFOFOOOOO");
+				screen.get(selector).loadScript(this);
+				screen.get(selector).template(template);
+				fillList();
+				//loadHtml();
 			}
 		}
 	}
 	
-	private void loadHtml() {
+	public void treeChanged(String url) {
+		fillList();
+	}
+	
+	public void languageChanged() {
+		fillList();	
+	}
+	
+	private void fillList() {
+		FSList fslist = FSListManager.get(nodepath,false);
+		JSONObject data = fslist.toJSONObject(screen.getLanguageCode(),fields);
+		data.put("nodepath",nodepath);
+		data.put("size", fslist.size());
+		data.put("targetid",selector.substring(1));
+		//screen.bind(selector,"client","itemselected",this);
+		screen.get(selector).update(data);
+	}
+	
+	/*private void loadHtml() {
 		FSList fslist = FSListManager.get(nodepath,false);
 		JSONObject data = fslist.toJSONObject(screen.getLanguageCode(),fields);
 		data.put("language",screen.getLanguageCode());
@@ -74,5 +89,5 @@ public class DropDownController extends Html5Controller {
 		data.put("size", fslist.size());
 		data.put("targetid",selector.substring(1));
 		screen.get(selector).parsehtml(data);
-	}
+	}*/
 }

@@ -54,11 +54,12 @@
 		</controller>
 	</view>
 	
-	<view id="#license">
-		<template>workarea/collectiondef/dropdown.mst</template>
+	<view id="#license">		
 		<controller id="DropDownController">
 			<nodepath>/domain/mecanex/config/default/license/</nodepath>
-			<fields>title,value</fields>
+			<fields>title,value,default</fields>
+			<template>workarea/collectiondef/dropdown.mst</template>
+			<javascript>workarea/collectiondef/DropDownController.js</javascript>
 		</controller>
 	</view>
 </app>
