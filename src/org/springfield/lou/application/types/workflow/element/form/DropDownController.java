@@ -55,11 +55,12 @@ public class DropDownController extends Html5Controller {
 			if (node!=null) {
 				nodepath = node.getProperty("nodepath");
 				fields = node.getProperty("fields");
-				template = node.getProperty("template");
-
+				//template = node.getProperty("template");
+				//System.out.println("WHOOOOLOG="+template);
 				model.observeTree(this,nodepath);
-				screen.get(selector).template(template);
+				//screen.get(selector).template(template);
 				loadHtml();
+				//screen.get(selector).html("WHOOOFOFOOOOO");
 			}
 		}
 	}

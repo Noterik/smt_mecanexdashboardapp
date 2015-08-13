@@ -55,8 +55,8 @@
 	</view>
 	
 	<view id="#license">
+		<template>workarea/collectiondef/dropdown.mst</template>
 		<controller id="DropDownController">
-			<template>workarea/collectiondef/dropdown.mst</template>
 			<nodepath>/domain/mecanex/config/default/license/</nodepath>
 			<fields>title,value</fields>
 		</controller>
