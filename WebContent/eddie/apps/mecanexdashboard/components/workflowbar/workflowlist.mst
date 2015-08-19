@@ -1,5 +1,5 @@
 <table>
-<tr>{{#nodes}}<td id="{{targetid}}_{{id}}" class="item_{{targetid}}">{{title}}</td>{{/nodes}}</tr>
+<tr>{{#nodes}}<td id="{{targetid}}_{{id}}" class="item_{{targetid}} worflowbarentry">{{title}}</td>{{/nodes}}</tr>
 <tr><td>create new event</td></tr>
 </table>
 <div id="{{targetid}}_actionmenu" class="actionmenu"></div>

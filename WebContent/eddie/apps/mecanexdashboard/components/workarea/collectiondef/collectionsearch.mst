@@ -1,0 +1,23 @@
+<h3>Search</h3>
+<form id="collectionsearchform">
+<table>
+	<tr>
+		<td>Query:</td>
+		<td><input type="text"></td>
+		<td>Maximum price €:</td>
+		<td><div id="maxPrice"></td>
+	</tr>
+	<tr>
+		<td>Decade:</td>
+		<td><div id="decade"/></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>License:</td>
+		<td><div id="license"/></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+</form>

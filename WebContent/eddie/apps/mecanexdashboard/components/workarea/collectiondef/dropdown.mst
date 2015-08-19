@@ -1,3 +1,5 @@
 <select>
-{{#nodes}}<option value="{{value}}" {{#default}}selected="selected"{{/default}}>{{title}}</option>{{/nodes}}
+{{#nodes}}
+	<option value="{{#value}}{{value}}{{/value}}{{^value}}{{id}}{{/value}}" {{#default}}selected="selected"{{/default}}>{{title}}</option>
+{{/nodes}}
 </select> 

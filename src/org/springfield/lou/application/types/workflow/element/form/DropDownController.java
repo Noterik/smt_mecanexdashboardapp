@@ -57,7 +57,6 @@ public class DropDownController extends Html5Controller {
 				screen.get(selector).loadScript(this);
 				screen.get(selector).template(template);
 				fillList();
-				//loadHtml();
 			}
 		}
 	}
@@ -76,18 +75,6 @@ public class DropDownController extends Html5Controller {
 		data.put("nodepath",nodepath);
 		data.put("size", fslist.size());
 		data.put("targetid",selector.substring(1));
-		//screen.bind(selector,"client","itemselected",this);
 		screen.get(selector).update(data);
 	}
-	
-	/*private void loadHtml() {
-		FSList fslist = FSListManager.get(nodepath,false);
-		JSONObject data = fslist.toJSONObject(screen.getLanguageCode(),fields);
-		data.put("language",screen.getLanguageCode());
-		data.put("id",screen.getId());
-		data.put("nodepath",nodepath);
-		data.put("size", fslist.size());
-		data.put("targetid",selector.substring(1));
-		screen.get(selector).parsehtml(data);
-	}*/
 }

@@ -6,42 +6,28 @@ body {
 	background-size: 1024px 768px;
 }
 
-
-table,
-td,
-th {
-  border: solid 1px silver;
-  color:#eeeeee;
+.worflowbarentry {
   padding:5px;
   font-size:12pt;
   text-align: center;
-  }
+}
+
 table {
   border-collapse:collapse;
   width: 100%;
-  }
-table tr {
-  background-color:#777777;
-  }
-
-table td, table th{
-    border:1px solid #777777;
-    }
-    
- th {
-  background-color:#333333;
-  color:#fff;
-  }
-  
-  
- .passmousevents {
- 	pointer-events:none;  
- }
+}
  
- .menumouseover {
-	background-color: #5555aa;
- }
+#synctime {
+ 	display: none;
+}
   
+.passmousevents {
+	pointer-events:none;  
+}
+ 
+.menumouseover {
+ 	background-color: #5555aa;
+}  
   
  #hidebutton {
 	color: #000000;
@@ -151,4 +137,51 @@ table td, table th{
 	bottom:50px;
 	left:50px;
 	right:50px;
+	padding: 20px;
 }
+
+#collectionSearch {
+	position: relative;
+	height: 180px;
+	width: 100%;
+}
+
+#collectionSearchTable {
+	text-align: left;
+}
+
+#collectionSearchResults {
+	position: absolute;
+	left: 20px;
+	width: 70%;
+	bottom: 10%;
+	top: 200px;
+	margin-left: 50px;
+}
+
+#collectionOverview {
+	position: absolute;
+	right: 20px;
+	width: 25%;
+	bottom: 10%;
+	top: 200px;
+}
+
+#licenseButton {
+	background-color:#888888;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:14px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+}
+
+.maxPriceError {
+	border-color: #ff0000;
+}
+

@@ -54,12 +54,45 @@
 		</controller>
 	</view>
 	
+	<view id="#collectionSearch">
+		<template>workarea/collectiondef/collectionsearch.mst</template>
+		<controller id="CollectionSearchController" />
+	</view>
+	
+	<view id="#collectionSearchResults">
+		<template>workarea/collectiondef/collectionsearchresults.mst</template>
+		<controller id="CollectionSearchResultsController" />
+	</view>
+	
+	<view id="#collectionOverview">
+		<template>workarea/collectiondef/collectionoverview.mst</template>
+		<controller id="CollectionOverviewController" />
+	</view>
+	
+	<view id="#decade">
+		<controller id="DropDownController">
+			<nodepath>/domain/mecanex/config/default/decade/</nodepath>
+			<fields>title,default</fields>
+			<template>workarea/collectiondef/dropdown.mst</template>
+			<javascript>workarea/collectiondef/DropDownController.js</javascript>
+		</controller>
+	</view>
+	
 	<view id="#license">		
 		<controller id="DropDownController">
 			<nodepath>/domain/mecanex/config/default/license/</nodepath>
 			<fields>title,value,default</fields>
 			<template>workarea/collectiondef/dropdown.mst</template>
 			<javascript>workarea/collectiondef/DropDownController.js</javascript>
+		</controller>
+	</view>
+	
+	<view id="#maxPrice">
+		<controller id="InputFieldWithValidationController">
+			<template>workarea/collectiondef/InputFieldWithValidation.mst</template>
+			<javascript>workarea/collectiondef/InputFieldWithValidationController.js</javascript>
+			<validRegex>^[0-9,]*$</validRegex>
+			<invalidRegex>[^0-9,]</invalidRegex>
 		</controller>
 	</view>
 </app>

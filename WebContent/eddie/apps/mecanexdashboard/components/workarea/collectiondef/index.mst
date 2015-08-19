@@ -1,3 +1,7 @@
-I AM THE COLLECTION DEF CONTROLLER
+<div id="collectionSearch"/>
+
+<div id="collectionSearchResults"/>
+
+<div id="collectionOverview"/>
 
 <div id="license"/>
