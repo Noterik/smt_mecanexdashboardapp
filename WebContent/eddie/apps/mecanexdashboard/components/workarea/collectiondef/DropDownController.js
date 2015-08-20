@@ -13,7 +13,8 @@ DropDownController.update = function(vars, data) {
     	var arr = options["options"] = [];
     	$(targetId+" option:selected").each(function() {
     		var option = {};
-    		option[$(this).val()] = $(this).text();
+    		option["value"] = $(this).val();
+    		option["name"] = $(this).text();
     		arr.push(option);
     	});
     	eddie.sendEvent(vars.get('targetid'),"dropDownOptionSelected",options);

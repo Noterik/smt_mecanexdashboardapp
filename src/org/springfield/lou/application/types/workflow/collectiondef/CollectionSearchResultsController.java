@@ -21,6 +21,7 @@
 package org.springfield.lou.application.types.workflow.collectiondef;
 
 import org.json.simple.JSONObject;
+import org.springfield.fs.FsNode;
 import org.springfield.lou.controllers.Html5Controller;
 
 /**
@@ -33,12 +34,23 @@ import org.springfield.lou.controllers.Html5Controller;
  */
 public class CollectionSearchResultsController extends Html5Controller {
 	
+	private String template;
+	
 	public CollectionSearchResultsController() {
 		
 	}
 	
 	public void attach(String sel) {
 		selector = sel;
+		if (screen!=null) {
+			FsNode node = getControllerNode(selector);
+			if (node!=null) {
+				template = node.getProperty("template");
+
+				screen.get(selector).loadScript(this);
+				screen.get(selector).template(template);
+			}
+		}		
 		loadHtml();
 	}
 	
@@ -46,6 +58,6 @@ public class CollectionSearchResultsController extends Html5Controller {
 		JSONObject data = new JSONObject();	
 		data.put("language",screen.getLanguageCode());
 		data.put("id",screen.getId());
-		screen.get(selector).parsehtml(data);
+		screen.get(selector).update(data);
 	}
 }

@@ -59,14 +59,23 @@
 		<controller id="CollectionSearchController" />
 	</view>
 	
-	<view id="#collectionSearchResults">
-		<template>workarea/collectiondef/collectionsearchresults.mst</template>
-		<controller id="CollectionSearchResultsController" />
+	<view id="#collectionSearchResults">		
+		<controller id="CollectionSearchResultsController">
+			<template>workarea/collectiondef/collectionsearchresults.mst</template>
+			<javascript>workarea/collectiondef/CollectionSearchResultsController.js</javascript>
+		</controller>
 	</view>
 	
 	<view id="#collectionOverview">
 		<template>workarea/collectiondef/collectionoverview.mst</template>
 		<controller id="CollectionOverviewController" />
+	</view>
+	
+	<view id="#query">
+		<controller id="InputFieldController">
+			<template>workarea/collectiondef/InputField.mst</template>
+			<javascript>workarea/collectiondef/InputFieldController.js</javascript>
+		</controller>
 	</view>
 	
 	<view id="#decade">

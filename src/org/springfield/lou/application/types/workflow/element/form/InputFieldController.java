@@ -1,5 +1,5 @@
 /* 
-* InputFieldWithValidationController.java
+* InputFieldController.java
 * 
 * Copyright (c) 2015 Noterik B.V.
 * 
@@ -23,46 +23,65 @@ package org.springfield.lou.application.types.workflow.element.form;
 import org.json.simple.JSONObject;
 import org.springfield.fs.Fs;
 import org.springfield.fs.FsNode;
+import org.springfield.lou.controllers.Html5Controller;
 
 /**
- * InputFieldWithValidationController.java
+ * InputFieldController.java
  *
  * @author Pieter van Leeuwen
  * @copyright Copyright: Noterik B.V. 2015
  * @package org.springfield.lou.application.types.workflow.element.form
  * 
  */
-public class InputFieldWithValidationController extends InputFieldController {
-	private String validRegex;
-	private String invalidRegex;
+public class InputFieldController extends Html5Controller {	
+	public String nodepath;
+	public String template;
+	public String value;
+	public int size = -1;
+	public int maxlength = -1;
+	public boolean disabled = false;
 	
-	public InputFieldWithValidationController() {
+	public InputFieldController() {
 		//constructor
-		super();
 	}
 	
-	@Override
 	public void attach(String s) {
 		selector = s;
 		if (screen!=null) {
 			FsNode node = getControllerNode(selector);
 			if (node!=null) {
-				//mandatory fields				
-				validRegex = node.getProperty("validRegex");				
+				//mandatory fields
+				template = node.getProperty("template");				
 								
-				//optional fields				
-				invalidRegex = node.getProperty("invalidRegex");
+				//optional fields
+				nodepath = node.getProperty("nodepath");
+				value = node.getProperty("value");
+				size = node.getProperty("size") == null ? -1 : Integer.parseInt(node.getProperty("size"));
+				maxlength = node.getProperty("maxlength") == null ? -1 : Integer.parseInt(node.getProperty("maxlength"));
+				disabled = node.getProperty("disabled") == null ? false : Boolean.parseBoolean(node.getProperty("disabled"));
 				
-				//parent attach
-				super.attach(s);
+				if (nodepath != null) {
+					model.observeTree(this,nodepath);
+				}
+				
+				screen.get(selector).loadScript(this);
+				screen.get(selector).template(template);
+				updateInputField();
 				
 				screen.get(selector).syncvars("controller/validRegex");
 				screen.get(selector).syncvars("controller/invalidRegex");
 			}
 		}
 	}
-	
-	@Override
+		
+	public void treeChanged(String url) {
+		updateInputField();
+	}
+		
+	public void languageChanged() {
+		updateInputField();	
+	}
+		
 	public void updateInputField() {
 		JSONObject data;
 		
@@ -74,15 +93,13 @@ public class InputFieldWithValidationController extends InputFieldController {
 			data = new JSONObject();
 			if (value != null) { data.put("value", value); }
 		}
-		data.put("regex", validRegex);	
 		
 		//set optional fields
 		if (size != -1) { data.put("size", size); }
 		if (maxlength != -1) { data.put("maxlength", maxlength); }
 		if (disabled) { data.put("disabled", disabled); }
-		if (invalidRegex != null) { data.put("invalidRegex", invalidRegex); }
 		
 		data.put("targetid",selector.substring(1));
 		screen.get(selector).update(data);
-	}	
+	}
 }

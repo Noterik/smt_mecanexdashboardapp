@@ -24,11 +24,9 @@ InputFieldWithValidationController.update = function(vars, data) {
     	if (valid) {    		
     		clearTimeout(timer);
 	    	delay(function() {
-	    		if (input.val()) {
-	    			var obj = {};
-	    			obj['value'] = input.val();
-	    			eddie.sendEvent(vars.get('targetid'),"inputFieldEntered",obj);
-	    		}
+	    		var obj = {};
+	    		obj['value'] = input.val();
+	    		eddie.sendEvent(vars.get('targetid'),"inputFieldEntered",obj);
 	    	}, 500);
     	} else {
     		var regex = new RegExp(vars.get("controller/invalidRegex"));

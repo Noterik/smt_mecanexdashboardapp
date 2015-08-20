@@ -3,7 +3,7 @@
 <table>
 	<tr>
 		<td>Query:</td>
-		<td><input type="text"></td>
+		<td><div id="query"/></td>
 		<td>Maximum price €:</td>
 		<td><div id="maxPrice"></td>
 	</tr>
