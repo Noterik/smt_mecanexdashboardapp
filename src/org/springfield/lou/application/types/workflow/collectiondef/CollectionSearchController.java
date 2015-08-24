@@ -112,8 +112,9 @@ public class CollectionSearchController extends Html5Controller {
 		FSList fslist = FSListManager.get(uri);
 		List<FsNode> nodes = fslist.getNodesFiltered(q); // find the item
 		
-		JSONObject results = FSList.parseNodeList(uri, nodes).toJSONObject(screen.getLanguageCode(), "TitleSet_TitleSetInEnglish_title");
-	
+		JSONObject results = FSList.parseNodeList(uri, nodes).toJSONObject(screen.getLanguageCode(), "provider,TitleSet_TitleSetInEnglish_title");
+		results.put("provider", "Luce");
+		
 		screen.get("#collectionSearchResults").update(results);		
 	}
 	

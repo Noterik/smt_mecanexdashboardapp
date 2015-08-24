@@ -1,19 +1,13 @@
 <h3>Results</h3>
-<p id="provider_luce">
-Luce - 3 results<br/>
-<span style="display:inline-block; text-indent: 20px">Item 1 - Add</span><br/>
-<span style="display:inline-block; text-indent: 20px">Item 2 - Add</span><br/>
-<span style="display:inline-block; text-indent: 20px">Item 3</span><br/>
-</p>
-<p id="provider_europeana">
-Europeana - 1 result<br/>
-<span style="display:inline-block; text-indent: 20px">Item 1 - Add</span><br/>
-</p>
-<p id="provider_youtube">
-Youtube - 5 results<br/>
-<span style="display:inline-block; text-indent: 20px">Item 1</span><br/>
-<span style="display:inline-block; text-indent: 20px">Item 2 - Add</span><br/>
-<span style="display:inline-block; text-indent: 20px">Item 3</span><br/>
-<span style="display:inline-block; text-indent: 20px">Item 4 - Add</span><br/>
-<span style="display:inline-block; text-indent: 20px">Item 5 - Add</span><br/>
-</p>
+{{#provider}}
+	<p id="provider_results_{{provider}}">
+		{{provider}} - <span id="provider_total_results_{{provider}}">{{nodes.length}}</span> results<br/>
+		{{#nodes}}
+			<span style="display:inline-block; text-indent: 20px">{{TitleSet_TitleSetInEnglish_title}}</span>
+			<span class="add_result" id="{{provider}}_{{id}}"> - Add</span><br/>
+		{{/nodes}}
+	</p>
+{{/provider}}
+{{^provider}}
+First begin your search
+{{/provider}}
