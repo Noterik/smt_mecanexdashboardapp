@@ -7,7 +7,10 @@ CollectionSearchResultsController.update = function(vars, data) {
 	var rendered = Mustache.render(vars.get("template"),data);
 	$(targetId).html(rendered);   
 	
-	$(".add_result").one('click', function() {
-		console.log($(this).id);
+	$(".add_result").on('click', function(event) {
+		var itemId = event.target.id;
+		var obj = {};
+    	obj['itemId'] = itemId;
+		eddie.sendEvent(vars.get('targetid'),"addResult",obj);
 	});
 };

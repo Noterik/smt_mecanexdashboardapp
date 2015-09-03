@@ -95,19 +95,10 @@ table {
 }
 
 #login {
-	display: none;
-	color: #000000;
-	background-color: #ffffff;
 	text-align: center;
 	font-style: bold;
-	position:absolute;
-	left : 50px;
-	top:20px;
-	width: 250px;
-	height: 50px;
 	padding: 3px;
 }
-
 
 #header {
 	color: #ffffff;
@@ -167,6 +158,10 @@ table {
 	top: 200px;
 }
 
+.link {
+	cursor:pointer;
+}
+
 #licenseButton {
 	background-color:#888888;
 	-moz-border-radius:7px;
@@ -180,8 +175,3 @@ table {
 	padding:8px 15px;
 	text-decoration:none;
 }
-
-.maxPriceError {
-	border-color: #ff0000;
-}
-

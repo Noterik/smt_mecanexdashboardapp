@@ -110,7 +110,8 @@ public class CollectionSearchController extends Html5Controller {
 		
 		String uri = "/domain/mecanex/user/*/*";
 		FSList fslist = FSListManager.get(uri);
-		List<FsNode> nodes = fslist.getNodesFiltered(q); // find the item
+		//TODO: now only handling query, ignoring other fields
+		List<FsNode> nodes = fslist.getNodesFiltered(q);
 		
 		JSONObject results = FSList.parseNodeList(uri, nodes).toJSONObject(screen.getLanguageCode(), "provider,TitleSet_TitleSetInEnglish_title");
 		results.put("provider", "Luce");

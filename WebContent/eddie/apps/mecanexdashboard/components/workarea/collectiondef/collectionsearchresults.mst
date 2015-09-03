@@ -4,7 +4,7 @@
 		{{provider}} - <span id="provider_total_results_{{provider}}">{{nodes.length}}</span> results<br/>
 		{{#nodes}}
 			<span style="display:inline-block; text-indent: 20px">{{TitleSet_TitleSetInEnglish_title}}</span>
-			<span class="add_result" id="{{provider}}_{{id}}"> - Add</span><br/>
+			<span class="add_result link" id="{{id}}"> - Add</span><br/>
 		{{/nodes}}
 	</p>
 {{/provider}}

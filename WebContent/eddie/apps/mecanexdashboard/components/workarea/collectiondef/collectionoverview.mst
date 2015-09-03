@@ -1,8 +1,8 @@
 <h3>Your collection</h3>
 <p>
-3 Items
+{{items}} Items
 </p>
 <p>
-Total Price € 30,-
+Total Price € {{price}}
 </p>
 <a href="#" id="licenseButton">License</a>

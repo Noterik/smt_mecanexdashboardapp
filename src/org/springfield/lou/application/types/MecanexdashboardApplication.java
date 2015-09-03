@@ -20,11 +20,11 @@
 */
 package org.springfield.lou.application.types;
 
+import java.util.Date;
+
 import org.springfield.lou.application.*;
 import org.springfield.lou.controllers.ScreenController;
 import org.springfield.lou.screen.*;
-
-
 
 /**
  * MecanexdashboardApplication.java
@@ -35,25 +35,45 @@ import org.springfield.lou.screen.*;
  * 
  */
 public class MecanexdashboardApplication extends Html5Application {
-	//private static ActiveEvent ae = new ActiveEvent();
+	private static long MAX_SESSION_TIME = 3600000l;
 	
  	public MecanexdashboardApplication(String id) {
 		super(id); 
 		this.setSessionRecovery(true);
 		this.addToRecoveryList("username");
-		//this.addToRecoveryList("email");
-	}
- 	
+		this.addToRecoveryList("lastlogin");
+	} 	
 	
     public void onNewScreen(Screen s) {
     		s.setLanguageCode("en");
-			s.get("#screen").setViewProperty("template", "screen.mst");
-			s.get("#screen").attach(new ScreenController());
-			loadStyleSheet(s,"desktop");
-				
-			// attach all the controllers for this view from app.xml
-			s.get("#header").attach(new HeaderController());
-			s.get("#workflowbar").attach(new WorkflowController());
-			s.get("#workarea").attach(new WorkAreaController()); 
+			
+    		String username = (String) s.getProperty("username");
+    		String lastVisit = (String) s.getProperty("lastlogin");
+    		long lastLogin = Long.MIN_VALUE;
+    		System.out.println("username "+username+ " lastLogin "+lastVisit);
+    		if (lastVisit != null) {
+    			lastLogin = Long.parseLong(lastVisit);
+    		}
+    		
+    		
+    		loadStyleSheet(s,"desktop");
+    		
+    		if (username != null && lastVisit != null && (new Date().getTime() - lastLogin <  MAX_SESSION_TIME)) {
+    			s.get("#screen").setViewProperty("template", "screen.mst");
+    			// attach all the controllers for this view from app.xml
+    			s.get("#screen").attach(new ScreenController());
+    			HeaderController header = new HeaderController();
+    			s.get("#header").attach(header);
+    			s.bind("#header", "client", "logout", header);
+    			s.get("#workflowbar").attach(new WorkflowController());
+    			s.get("#workarea").attach(new WorkAreaController()); 
+    		} else {
+    			s.get("#screen").setViewProperty("template", "login/index.mst");
+    			// attach all the controllers for this view from app.xml
+    			s.get("#screen").attach(new ScreenController());
+    			LoginController login = new LoginController();
+    			s.get("#login").attach(login);
+    			s.bind("#login", "client", "loginSubmitted", login);
+    		}   
      }
 }

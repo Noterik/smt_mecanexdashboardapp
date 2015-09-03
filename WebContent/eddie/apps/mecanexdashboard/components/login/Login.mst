@@ -1,0 +1,7 @@
+{{#topText}}{{topText}}{{/topText}}
+<form action="javascript:void(0);">
+	{{nameText}}: <input type="text" name="username" id="login_username"><br/>
+	{{passwordText}}: <input type="password" name="password" id="login_password"><br/>
+	<button id="login_submit">{{buttonText}}</button><br/>
+	{{#errorText}}<div id="login_error">{{errorText}}</div>{{/errorText}}
+</form> 

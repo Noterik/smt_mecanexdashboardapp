@@ -1,7 +1,31 @@
 <app>
+	<view id="#loginhome">
+		<template>login/index.mst</template>
+		<controller id="LoginHomeController"/>
+	</view>
+	
+	<view id="#login">
+		<controller id="LoginController">
+			<template>login/Login.mst</template>
+			<javascript>login/LoginController.js</javascript>
+			<titleText>Login</titleText>
+			<nameText>Username</nameText>
+			<passwordText>Password</passwordText>
+			<buttonText>Login</buttonText>
+			<errorText>Login failed</errorText>
+		</controller>
+	</view>
+	
 	<view id="#screen">
 		<template>screen.mst</template>
 		<controller id="ScreenController">
+		</controller>
+	</view>	
+	
+	<view id="#header">
+		<controller id="HeaderController">
+			<template>header/index.mst</template>
+			<javascript>header/HeaderController.js</javascript>
 		</controller>
 	</view>
 	
@@ -67,8 +91,10 @@
 	</view>
 	
 	<view id="#collectionOverview">
-		<template>workarea/collectiondef/collectionoverview.mst</template>
-		<controller id="CollectionOverviewController" />
+		<controller id="CollectionOverviewController">
+			<template>workarea/collectiondef/collectionoverview.mst</template>
+			<javascript>workarea/collectiondef/CollectionOverviewController.js</javascript>
+		</controller>
 	</view>
 	
 	<view id="#query">

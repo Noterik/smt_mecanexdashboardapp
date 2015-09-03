@@ -3,19 +3,19 @@
 <table>
 	<tr>
 		<td>Query:</td>
-		<td><div id="query"/></td>
+		<td id="query"></td>
 		<td>Maximum price €:</td>
-		<td><div id="maxPrice"></td>
+		<td id="maxPrice"></td>
 	</tr>
 	<tr>
 		<td>Decade:</td>
-		<td><div id="decade"/></td>
+		<td id="decade"></td>
 		<td></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>License:</td>
-		<td><div id="license"/></td>
+		<td id="license"></td>
 		<td></td>
 		<td></td>
 	</tr>
