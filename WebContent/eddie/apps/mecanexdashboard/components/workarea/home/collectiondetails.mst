@@ -1,0 +1,10 @@
+<h3>Collection details</h3>
+{{#nodes}}
+	Title: {{title}}<br/>
+	Description: {{description}}
+{{/nodes}}
+
+{{#newcollection}}
+	Title: <br/>
+	Description: <br/>
+{{/newcollection}}

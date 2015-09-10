@@ -10,8 +10,11 @@ public class HomeController extends Html5Controller {
 	}
 	
 	public void attach(String sel) {
-		selector = sel;
+		selector = sel;		
 		loadHtml();
+		//Attach after loadHtml() to make sure these templates get loaded
+		screen.get("#userCollections").attach(new UserCollectionsController());
+		screen.get("#collectionDetails").attach(new CollectionDetailsController());
 	}
 	
 	private void loadHtml() {

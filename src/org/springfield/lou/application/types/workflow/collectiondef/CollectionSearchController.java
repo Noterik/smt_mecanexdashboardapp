@@ -10,6 +10,7 @@ import org.springfield.fs.FsNode;
 import org.springfield.lou.application.types.workflow.element.form.DropDownController;
 import org.springfield.lou.application.types.workflow.element.form.InputFieldController;
 import org.springfield.lou.application.types.workflow.element.form.InputFieldWithValidationController;
+import org.springfield.lou.application.types.workflow.element.form.SubmitButtonController;
 import org.springfield.lou.controllers.Html5Controller;
 import org.springfield.lou.screen.Screen;
 
@@ -61,6 +62,8 @@ public class CollectionSearchController extends Html5Controller {
 		screen.bind("#decade", "client", "decadeSelected", this);
 		screen.get("#license").attach(new DropDownController());
 		screen.bind("#license","client","licenseSelected", this);
+		screen.get("#submitButton").attach(new SubmitButtonController());
+		screen.bind("#submitButton", "client", "submitButtonClicked", this);
 	}
 	
 	public void queryEntered(Screen s, JSONObject data) {
@@ -103,6 +106,10 @@ public class CollectionSearchController extends Html5Controller {
 		
 		query.put("license", license);
 		updateSearch();
+	}
+	
+	public void submitButtonClicked(Screen s, JSONObject data) {
+		System.out.println("Submit button clicked: "+data);
 	}
 	
 	private void updateSearch() {

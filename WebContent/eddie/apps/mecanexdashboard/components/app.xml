@@ -44,6 +44,20 @@
 		<controller id="HomeController" />
 	</view>
 	
+	<view id="#userCollections">
+		<controller id="UserCollectionsController">
+			<template>workarea/home/usercollections.mst</template>
+			<javascript>workarea/home/UserCollectionsController.js</javascript>
+		</controller>
+	</view>
+	
+	<view id="#collectionDetails">
+		<controller id="CollectionDetailsController">
+			<template>workarea/home/collectiondetails.mst</template>
+			<javascript>workarea/home/CollectionDetailsController.js</javascript>
+		</controller>
+	</view>
+	
 	<view id="#ingest">
 		<template>workarea/ingest/index.mst</template>
 		<controller id="IngestController" />
@@ -128,6 +142,14 @@
 			<javascript>workarea/collectiondef/InputFieldWithValidationController.js</javascript>
 			<validRegex>^[0-9,]*$</validRegex>
 			<invalidRegex>[^0-9,]</invalidRegex>
+		</controller>
+	</view>
+	
+	<view id="#submitButton">
+		<controller id="SubmitButtonController">
+			<template>workarea/collectiondef/SubmitButton.mst</template>
+			<javascript>workarea/collectiondef/SubmitButtonController.js</javascript>
+			<fieldsToSubmit>query,maxPrice</fieldsToSubmit>
 		</controller>
 	</view>
 </app>

@@ -1,0 +1,10 @@
+<h3>Your collections</h3>
+<div>
+{{#nodes}}
+		<span style="display:inline-block; text-indent: 20px" class="collection" id="{{path}}">{{title}}</span><br/>
+{{/nodes}}
+{{^nodes}}
+No collections yet
+{{/nodes}}
+</div><br/>
+<div><a id="addCollection" href="javascript:void(0);">Add collection</div>

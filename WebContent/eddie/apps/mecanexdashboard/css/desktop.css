@@ -175,3 +175,41 @@ table {
 	padding:8px 15px;
 	text-decoration:none;
 }
+
+#userCollections {
+	left: 20px;
+	position: absolute;
+	width: 50%;
+	top: 20px;
+	bottom: 20px;
+}
+
+#collectionDetails {
+	right: 20px;
+	position: absolute;
+	width: 50%;
+	top: 20px;
+	bottom: 20px;
+}
+
+.submitButton {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 6px 10px 6px 10px;
+  text-decoration: none;
+  width: 50px;
+}
+
+.collection {
+	cursor:pointer;
+}
