@@ -4,7 +4,7 @@
 	<tr>
 		<td>Query:</td>
 		<td id="query"></td>
-		<td>Maximum price €:</td>
+		<td style="width: 185px;">Maximum price €:</td>
 		<td id="maxPrice"></td>
 	</tr>
 	<tr>
