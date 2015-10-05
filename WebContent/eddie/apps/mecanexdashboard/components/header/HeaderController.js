@@ -7,15 +7,15 @@ HeaderController.update = function(vars, data) {
 		return;
 	}
 	
-	var targetId = '#'+vars.get('targetid'); 
+	var targetId = '#'+data['targetid']; 
 	
 	// render the new html using mustache and the data from the server and show it
-	var rendered = Mustache.render(vars.get("template"),data);
+	var rendered = Mustache.render(vars["template"],data);
 	$(targetId).html(rendered);
 	
 	$(targetId+" a").on('click', function() {
 		var obj = {};
-		eddie.sendEvent(vars.get('targetid'),"logout",obj);
+		eddie.sendEvent(data['targetid'],"logout",obj);
 	});
 };
 

@@ -2,10 +2,10 @@ var InputFieldController = function(options) {}; // needed for detection
 
 InputFieldController.update = function(vars, data) {
 	var timer = 0;
-	var targetId = '#'+vars.get('targetid'); 
+	var targetId = '#'+data['targetid']; 
 	
 	// render the new html using mustache and the data from the server and show it
-	var rendered = Mustache.render(vars.get("template"),data);
+	var rendered = Mustache.render(vars["template"],data);
     $(targetId).html(rendered);
     
     //small timeout before sending input to server to make sure user has stopped typing
@@ -23,7 +23,7 @@ InputFieldController.update = function(vars, data) {
 	    delay(function() {
 	    	var obj = {};
 	    	obj['value'] = input.val();
-	    	eddie.sendEvent(vars.get('targetid'),"inputFieldEntered",obj);
+	    	eddie.sendEvent(data['targetid'],"inputFieldEntered",obj);
 	    }, 500);  	
     });
 };

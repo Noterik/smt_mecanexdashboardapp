@@ -1,10 +1,10 @@
 var DropDownController = function(options) {}; // needed for detection
 
 DropDownController.update = function(vars, data) {
-	var targetId = '#'+vars.get('targetid'); 
+	var targetId = '#'+data['targetid']; 
 	
 	// render the new html using mustache and the data from the server and show it
-	var rendered = Mustache.render(vars.get("template"),data);
+	var rendered = Mustache.render(vars["template"],data);
     $(targetId).html(rendered);
 
     //event on change
@@ -17,6 +17,6 @@ DropDownController.update = function(vars, data) {
     		option["name"] = $(this).text();
     		arr.push(option);
     	});
-    	eddie.sendEvent(vars.get('targetid'),"dropDownOptionSelected",options);
+    	eddie.sendEvent(data['targetid'],"dropDownOptionSelected",options);
     });
 };

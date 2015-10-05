@@ -7,18 +7,17 @@ LoginController.update = function(vars, data) {
 		return;
 	}
 	
-	
-	var targetId = '#'+vars.get('targetid'); 
+	var targetId = '#'+data['targetid']; 
 	
 	// render the new html using mustache and the data from the server and show it
-	var rendered = Mustache.render(vars.get("template"),data);
+	var rendered = Mustache.render(vars["template"],data);
 	$(targetId).html(rendered);
 	
 	$(targetId+" > form > button").on('click', function() {
 		var obj = {};
 		obj['user'] = $(targetId +" input[type='text']").val();
 		obj['pass'] = $(targetId +" input[type='password']").val();
-		eddie.sendEvent(vars.get('targetid'),"loginSubmitted",obj);
+		eddie.sendEvent(data['targetid'],"loginSubmitted",obj);
 	});
 };
 
