@@ -20,7 +20,7 @@ table {
   border-collapse:collapse;
   width: 100%;
 }
- 
+
 #synctime {
  	display: none;
 }
@@ -132,9 +132,13 @@ table {
 
 .header-container {
 	float: right; 
-	margin-right: 30px; 
+	margin-right: 12px; 
 	margin-top: 15px; 
 	text-align: right;
+}
+
+.add_result {
+	color: #1ABC9C;
 }
 
 #header {
@@ -163,6 +167,7 @@ table {
 	height: 100%;
 	margin-left: 42px;
 	float: left;
+	margin-bottom: 50px;
 }
 
 #collectionSearch {
