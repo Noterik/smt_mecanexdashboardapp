@@ -188,9 +188,7 @@ table {
 	float: right;
 	margin-right: 12px;
 	height: 50px;
-	font-family: 'Roboto', sans-serif;
-	font-style: normal;
-	font-weight: 400;
+	font-weight: bold;
 }
 
 #workflowbar {
@@ -200,6 +198,10 @@ table {
 	width: 1267px;
 	float: left;
 	margin-left: 42px;
+}
+
+#workflowlist > td {
+	text-transform: uppercase;
 }
 
 #workarea {
